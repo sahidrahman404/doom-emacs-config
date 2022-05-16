@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: image
+# key: i
+# --
+
+#+ATTR_ORG: :width 70%

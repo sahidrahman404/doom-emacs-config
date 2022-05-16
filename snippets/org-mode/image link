@@ -1,0 +1,4 @@
+# key: il
+# name: image link
+# --
+[[../Pictures/mpv-shot${1:000}.jpg]]$0

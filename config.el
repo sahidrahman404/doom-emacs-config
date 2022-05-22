@@ -19,9 +19,9 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 15  )
-        doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 24 )
-      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 15 ))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14 :weight 'bold)
+        doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 24 :weight 'bold)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 14 :weight 'bold))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -37,7 +37,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -91,6 +91,7 @@
   :ensure t
   :after(rjsx-mode)
   :hook (rjsx-mode . prettier-js-mode))
+(add-hook 'web-mode-hook 'prettier-js-mode)
 
 (setq prettier-js-args '(
   "--single-quote" "true"
@@ -98,7 +99,7 @@
   "--semi" "true"
 ))
 
-(defconst doom-frame-transparency 100)
+(defconst doom-frame-transparency 90)
 (set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)
 (add-to-list 'default-frame-alist `(alpha . ,doom-frame-transparency))
 (defun dwc-smart-transparent-frame ()

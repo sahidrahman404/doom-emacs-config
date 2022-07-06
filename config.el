@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 14 :weight 'bold)
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16)
         doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 24 :weight 'bold)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 14 :weight 'bold))
 (after! doom-themes
@@ -37,7 +37,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-nord)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -99,7 +99,7 @@
   "--semi" "true"
 ))
 
-(defconst doom-frame-transparency 90)
+(defconst doom-frame-transparency 100)
 (set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)
 (add-to-list 'default-frame-alist `(alpha . ,doom-frame-transparency))
 (defun dwc-smart-transparent-frame ()
@@ -245,13 +245,3 @@ _h_ decrease width    _l_ increase width
                                        "cannot open shared object file")
                                (error-message-string e))
          (signal (car e) (cadr e)))))))
-
-;; (use-package! evil-textobj-tree-sitter
-;;   :after tree-sitter
-;;   :config
-;;   (map!
-;;    :textobj "f" (evil-textobj-tree-sitter-get-textobj "function.inner") (evil-textobj-tree-sitter-get-textobj "function.outer") ;; redef
-;;    :textobj "C" (evil-textobj-tree-sitter-get-textobj "class.inner") (evil-textobj-tree-sitter-get-textobj "class.outer")
-;;    :textobj "c" nil (evil-textobj-tree-sitter-get-textobj "comment.outer")
-;;    :textobj "i" (evil-textobj-tree-sitter-get-textobj "conditional.inner") (evil-textobj-tree-sitter-get-textobj "conditional.outer")
-;;    :textobj "l" (evil-textobj-tree-sitter-get-textobj "loop.inner") (evil-textobj-tree-sitter-get-textobj "loop.outer")))

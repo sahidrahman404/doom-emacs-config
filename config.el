@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Mohamad Sahid Rahman"
+      user-mail-address "sahidrahman404@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -37,7 +37,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-one)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -224,25 +224,10 @@ _h_ decrease width    _l_ increase width
   (setq nov-save-place-file (concat doom-cache-dir "nov-places")))
 (setq nov-text-width 80)
 
-;;; tools/tree-sitter/config.el -*- lexical-binding: t; -*-
+;; TSI mode
+(use-package! tsi
+:mode ("\\.tsx\\'" . tsi-typescript))
 
-(use-package! tree-sitter
-  :when (bound-and-true-p module-file-suffix)
-  :hook (prog-mode . tree-sitter-mode)
-  :hook (tree-sitter-after-on . tree-sitter-hl-mode)
-  :config
-  (require 'tree-sitter-langs)
-  (setq tree-sitter-debug-jump-buttons t
-        tree-sitter-debug-highlight-jump-region t)
-
-  (defadvice! doom-tree-sitter-fail-gracefully-a (orig-fn &rest args)
-    "Don't break with errors when current major mode lacks tree-sitter support."
-    :around #'tree-sitter-mode
-    (condition-case e
-        (apply orig-fn args)
-      (error
-       (unless (string-match-p (concat "^Cannot find shared library\\|"
-                                       "^No language registered\\|"
-                                       "cannot open shared object file")
-                               (error-message-string e))
-         (signal (car e) (cadr e)))))))
+;; ;; TSX mode
+(use-package! tsx-mode
+:mode ("\\.tsx\\'" . tsx-mode))

@@ -59,11 +59,12 @@
 (setq org-log-into-drawer t)
 
 
-(setq org-agenda-files
-      '("~/Documents/org/Tasks.org"
-        "~/Documents/org/Habits.org"))
+;; (setq org-agenda-files
+;;       '("~/Documents/org/Tasks.org"
+;;         "~/Documents/org/Habits.org"))
 
 (require 'org-habit)
+(add-hook 'org-agenda-mode 'org-habit)
 (add-to-list 'org-modules 'org-habit)
 (setq org-habit-graph-column 60)
 
@@ -152,40 +153,41 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-recur
-(use-package org-recur
-  :hook ((org-mode . org-recur-mode)
-         (org-agenda-mode . org-recur-agenda-mode))
-  :demand t
-  :config
-  (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
+;; (use-package org-recur
+;;   :hook ((org-mode . org-recur-mode)
+;;          (org-agenda-mode . org-recur-agenda-mode))
+;;   :demand t
+;;   :config
+;;   (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
 
-  ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
-  ;; (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
-  (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
+;;   ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
+;;   ;; (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+;;   (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
 
-  (setq org-recur-finish-done t
-        org-recur-finish-archive t))
+;;   (setq org-recur-finish-done t
+;;         org-recur-finish-archive t))
 
-;; Refresh org-agenda after rescheduling a task.
-(defun org-agenda-refresh ()
-  "Refresh all `org-agenda' buffers."
-  (dolist (buffer (buffer-list))
-    (with-current-buffer buffer
-      (when (derived-mode-p 'org-agenda-mode)
-        (org-agenda-maybe-redo)))))
+;; ;; Refresh org-agenda after rescheduling a task.
+;; (defun org-agenda-refresh ()
+;;   "Refresh all `org-agenda' buffers."
+;;   (dolist (buffer (buffer-list))
+;;     (with-current-buffer buffer
+;;       (when (derived-mode-p 'org-agenda-mode)
+;;         (org-agenda-maybe-redo)))))
 
-(defadvice org-schedule (after refresh-agenda activate)
-  "Refresh org-agenda."
-  (org-agenda-refresh))
+;; (defadvice org-schedule (after refresh-agenda activate)
+;;   "Refresh org-agenda."
+;;   (org-agenda-refresh))
 
-;; Log time a task was set to Done.
-(setq org-log-done (quote time))
+;; ;; Log time a task was set to Done.
+;; (setq org-log-done (quote time))
 
-;; Don't log the time a task was rescheduled or redeadlined.
-(setq org-log-redeadline nil)
-(setq org-log-reschedule nil)
+;; ;; Don't log the time a task was rescheduled or redeadlined.
+;; (setq org-log-redeadline nil)
+;; (setq org-log-reschedule nil)
 
-(setq org-read-date-prefer-future 'time)
+;; (
+;; setq org-read-date-prefer-future 'time)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; emojify
@@ -231,3 +233,21 @@ _h_ decrease width    _l_ increase width
 ;; ;; TSX mode
 (use-package! tsx-mode
 :mode ("\\.tsx\\'" . tsx-mode))
+
+;; GTD
+(setq org-agenda-files '("~/Documents/org/gtd/inbox.org"
+                         "~/Documents/org/gtd/gtd.org"
+                         "~/Documents/org/gtd/tickler.org"
+                         "~/Documents/org/Tasks.org"
+                         "~/Documents/org/Habits.org"))
+
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "~/Documents/org/gtd/inbox.org" "Tasks")
+                               "* TODO %i%?")
+                              ("T" "Tickler" entry
+                               (file+headline "~/Documents/org/gtd/tickler.org" "Tickler")
+                               "* %i%? \n %U")))
+
+(setq org-refile-targets '(("~/Documents/org/gtd/gtd.org" :maxlevel . 3)
+                           ("~/Documents/org/gtd/someday.org" :level . 1)
+                           ("~/Documents/org/gtd/tickler.org" :maxlevel . 2)))

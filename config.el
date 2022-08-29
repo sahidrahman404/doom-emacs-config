@@ -227,12 +227,12 @@ _h_ decrease width    _l_ increase width
 (setq nov-text-width 80)
 
 ;; TSI mode
-(use-package! tsi
-:mode ("\\.tsx\\'" . tsi-typescript))
+;; (use-package! tsi
+;; :mode ("\\.tsx\\'" . tsi-typescript))
 
 ;; ;; TSX mode
-(use-package! tsx-mode
-:mode ("\\.tsx\\'" . tsx-mode))
+;; (use-package! tsx-mode
+;; :mode ("\\.tsx\\'" . tsx-mode))
 
 ;; GTD
 (setq org-agenda-files '("~/Documents/org/gtd/inbox.org"

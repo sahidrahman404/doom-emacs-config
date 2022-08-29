@@ -60,10 +60,9 @@
 (package! nov)
 
 ;; TSI
-(package! tsi
-:recipe (:host github :repo "orzechowskid/tsi.el"))
+;; (package! tsi
+;; :recipe (:host github :repo "orzechowskid/tsi.el"))
 
 ;; TSX
-(package! tsx-mode
-:recipe (:host github :repo "orzechowskid/tsx-mode.el"))
-
+;; (package! tsx-mode
+;; :recipe (:host github :repo "orzechowskid/tsx-mode.el"))

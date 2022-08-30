@@ -66,3 +66,8 @@
 ;; TSX
 (package! tsx-mode
 :recipe (:host github :repo "orzechowskid/tsx-mode.el"))
+
+
+;; Prisma
+(package! prisma-mode
+:recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))

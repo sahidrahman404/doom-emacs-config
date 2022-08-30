@@ -153,41 +153,41 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-recur
-;; (use-package org-recur
-;;   :hook ((org-mode . org-recur-mode)
-;;          (org-agenda-mode . org-recur-agenda-mode))
-;;   :demand t
-;;   :config
-;;   (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
+(use-package org-recur
+  :hook ((org-mode . org-recur-mode)
+         (org-agenda-mode . org-recur-agenda-mode))
+  :demand t
+  :config
+  (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
 
-;;   ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
-;;   ;; (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
-;;   (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
+  ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
+  ;; (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+  (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
 
-;;   (setq org-recur-finish-done t
-;;         org-recur-finish-archive t))
+  (setq org-recur-finish-done t
+        org-recur-finish-archive t))
 
-;; ;; Refresh org-agenda after rescheduling a task.
-;; (defun org-agenda-refresh ()
-;;   "Refresh all `org-agenda' buffers."
-;;   (dolist (buffer (buffer-list))
-;;     (with-current-buffer buffer
-;;       (when (derived-mode-p 'org-agenda-mode)
-;;         (org-agenda-maybe-redo)))))
+;; Refresh org-agenda after rescheduling a task.
+(defun org-agenda-refresh ()
+  "Refresh all `org-agenda' buffers."
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'org-agenda-mode)
+        (org-agenda-maybe-redo)))))
 
-;; (defadvice org-schedule (after refresh-agenda activate)
-;;   "Refresh org-agenda."
-;;   (org-agenda-refresh))
+(defadvice org-schedule (after refresh-agenda activate)
+  "Refresh org-agenda."
+  (org-agenda-refresh))
 
-;; ;; Log time a task was set to Done.
-;; (setq org-log-done (quote time))
+;; Log time a task was set to Done.
+(setq org-log-done (quote time))
 
-;; ;; Don't log the time a task was rescheduled or redeadlined.
-;; (setq org-log-redeadline nil)
-;; (setq org-log-reschedule nil)
+;; Don't log the time a task was rescheduled or redeadlined.
+(setq org-log-redeadline nil)
+(setq org-log-reschedule nil)
 
-;; (
-;; setq org-read-date-prefer-future 'time)
+(
+setq org-read-date-prefer-future 'time)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; emojify
@@ -227,12 +227,12 @@ _h_ decrease width    _l_ increase width
 (setq nov-text-width 80)
 
 ;; TSI mode
-;; (use-package! tsi
-;; :mode ("\\.tsx\\'" . tsi-typescript))
+(use-package! tsi
+:mode ("\\.tsx\\'" . tsi-typescript))
 
 ;; ;; TSX mode
-;; (use-package! tsx-mode
-;; :mode ("\\.tsx\\'" . tsx-mode))
+(use-package! tsx-mode
+:mode ("\\.tsx\\'" . tsx-mode))
 
 ;; GTD
 (setq org-agenda-files '("~/Documents/org/gtd/inbox.org"

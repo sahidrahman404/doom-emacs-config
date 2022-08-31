@@ -93,13 +93,14 @@
   :ensure t
   :after(rjsx-mode)
   :hook (rjsx-mode . prettier-js-mode))
-(add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'tsx-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 
-(setq prettier-js-args '(
-  "--single-quote" "true"
-  "--arrow-parens" "avoid"
-  "--semi" "true"
-))
+;; (setq prettier-js-args '(
+;;   "--single-quote" "true"
+;;   "--arrow-parens" "avoid"
+;;   "--semi" "true"
+;; ))
 
 (defconst doom-frame-transparency 100)
 (set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)

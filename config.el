@@ -19,9 +19,9 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 16)
-        doom-big-font (font-spec :family "FiraCode Nerd Font Mono" :size 24 :weight 'bold)
-      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 14 :weight 'bold))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16)
+        doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))

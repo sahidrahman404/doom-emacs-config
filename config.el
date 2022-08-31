@@ -252,5 +252,3 @@ _h_ decrease width    _l_ increase width
                            ("~/Documents/org/gtd/someday.org" :level . 1)
                            ("~/Documents/org/gtd/tickler.org" :maxlevel . 2)))
 
-;; prisma
-(load! "emacs-prisma-mode/prisma-mode")

@@ -256,3 +256,7 @@ _h_ decrease width    _l_ increase width
 ;; pdf tool
 (add-to-list 'auto-mode-alist '("\\.pdf\\'" . doc-view-mode))
 (add-hook 'doc-view-mode-hook #'pdf-tools-install)
+
+;; push anki notes
+(map! :leader
+      :desc "anki push" "n p" #'anki-editor-push-notes)

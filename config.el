@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16)
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14)
         doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24)
       doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
 (after! doom-themes
@@ -30,14 +30,14 @@
   '(font-lock-keyword-face :slant italic))
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font Mono"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'modus-vivendi)
+(setq doom-theme 'doom-vibrant)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -89,6 +89,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; prettier
 (use-package prettier.js
   :ensure t
   :after(rjsx-mode)
@@ -102,15 +103,15 @@
 ;;   "--semi" "true"
 ;; ))
 
-(defconst doom-frame-transparency 100)
-(set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)
-(add-to-list 'default-frame-alist `(alpha . ,doom-frame-transparency))
-(defun dwc-smart-transparent-frame ()
-  (set-frame-parameter
-    (selected-frame)
-    'alpha (if (frame-parameter (selected-frame) 'fullscreen)
-              100
-             doom-frame-transparency)))
+;; (defconst doom-frame-transparency 100)
+;; (set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)
+;; (add-to-list 'default-frame-alist `(alpha . ,doom-frame-transparency))
+;; (defun dwc-smart-transparent-frame ()
+;;   (set-frame-parameter
+;;     (selected-frame)
+;;     'alpha (if (frame-parameter (selected-frame) 'fullscreen)
+;;               100
+;;              doom-frame-transparency)))
 
 (setq org-image-actual-width nil)
 

@@ -294,3 +294,7 @@ _h_ decrease width    _l_ increase width
 (add-to-list 'apheleia-mode-alist '(typescript-mode . prettier))
 (add-to-list 'apheleia-mode-alist '(tsx-mode . prettier))
 (apheleia-global-mode t)
+
+;; centered
+(use-package centered-cursor-mode)
+(global-centered-cursor-mode t)

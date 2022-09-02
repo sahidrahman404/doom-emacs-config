@@ -60,6 +60,7 @@
 (package! nov)
 (package! beacon)
 (package! centered-cursor-mode)
+(package! apheleia)
 
 ;; TSI
 (package! tsi

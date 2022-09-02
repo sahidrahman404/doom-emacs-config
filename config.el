@@ -19,15 +19,28 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14)
-        doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24)
-      doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 14))
-(after! doom-themes
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t))
-(custom-set-faces!
-  '(font-lock-comment-face :slant italic)
-  '(font-lock-keyword-face :slant italic))
+(set-face-attribute 'default nil
+  :font "JetBrainsMono Nerd Font Mono"
+  :height 110
+  :weight 'medium)
+(set-face-attribute 'variable-pitch nil
+  :font "Ubuntu Nerd Font"
+  :height 120
+  :weight 'medium)
+(set-face-attribute 'fixed-pitch nil
+  :font "JetBrainsMono Nerd Font Mono"
+  :height 110
+  :weight 'medium)
+;; Makes commented text and keywords italics.
+;; This is working in emacsclient but not emacs.
+;; Your font must have an italic face available.
+(set-face-attribute 'font-lock-comment-face nil
+  :slant 'italic)
+(set-face-attribute 'font-lock-keyword-face nil
+  :slant 'italic)
+
+;; Uncomment the following line if line spacing needs adjusting.
+(setq-default line-spacing 0.12)
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
 (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-14"))
@@ -90,12 +103,12 @@
 ;; they are implemented.
 
 ;; prettier
-(use-package prettier.js
-  :ensure t
-  :after(rjsx-mode)
-  :hook (rjsx-mode . prettier-js-mode))
-(add-hook 'tsx-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
+;; (use-package prettier.js
+;;   :ensure t
+;;   :after(rjsx-mode)
+;;   :hook (rjsx-mode . prettier-js-mode))
+;; (add-hook 'tsx-mode-hook 'prettier-js-mode)
+;; (add-hook 'typescript-mode-hook 'prettier-js-mode)
 
 ;; (setq prettier-js-args '(
 ;;   "--single-quote" "true"
@@ -143,15 +156,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Native comp
-;; (when (and (fboundp 'native-comp-available-p)
-;;            (native-comp-available-p))
-;;   (progn
-;;     (setq native-comp-async-report-warnings-errors nil)
-;;     (setq comp-deferred-compilation t)
-;;     (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
-;;     (setq package-native-compile t)
-;;     ))
-;; (setq comp-speed 3)
+(when (and (fboundp 'native-comp-available-p)
+           (native-comp-available-p))
+  (progn
+    (setq native-comp-async-report-warnings-errors nil)
+    (setq comp-deferred-compilation t)
+    (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+    (setq package-native-compile t)
+    ))
+(setq comp-speed 3)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-recur
@@ -270,10 +283,14 @@ _h_ decrease width    _l_ increase width
 ;; beacon
 (beacon-mode 1)
 
-;; centered
-(setq centered-cursor-mode t)
-
 ;; lsp headerline mode
 (use-package lsp-mode
   :custom
   (lsp-headerline-breadcrumb-enable t))
+
+;; apheleia
+(use-package apheleia)
+(add-to-list 'apheleia-mode-alist '(json-mode . prettier))
+(add-to-list 'apheleia-mode-alist '(typescript-mode . prettier))
+(add-to-list 'apheleia-mode-alist '(tsx-mode . prettier))
+(apheleia-global-mode t)

@@ -30,7 +30,7 @@
   '(font-lock-keyword-face :slant italic))
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-14"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-16"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 
@@ -38,7 +38,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-vibrant)
-(setq doom-themes-treemacs-theme "doom-colors")
+;; (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -263,3 +263,14 @@ _h_ decrease width    _l_ increase width
   :after org-mode)
 (map! :leader
       :desc "anki push" "n p" #'anki-editor-push-notes)
+
+;; beacon
+(beacon-mode 1)
+
+;; centered
+(setq centered-cursor-mode t)
+
+;; lsp headerline mode
+(use-package lsp-mode
+  :custom
+  (lsp-headerline-breadcrumb-enable t))

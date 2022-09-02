@@ -58,6 +58,8 @@
 (package! org-download)
 (package! org-recur)
 (package! nov)
+(package! beacon)
+(package! centered-cursor-mode)
 
 ;; TSI
 (package! tsi
@@ -71,3 +73,11 @@
 ;; Prisma
 (package! prisma-mode
 :recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))
+
+;; Anki Editor
+(package! anki-edior
+:recipe (:host github :repo "louietan/anki-editor" :branch "master"))
+
+;; topsy
+(package! topsy
+  :recipe (:host github :repo "alphapapa/topsy.el"))

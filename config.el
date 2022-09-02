@@ -30,14 +30,14 @@
   '(font-lock-keyword-face :slant italic))
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-16"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-14"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'modus-vivendi)
 ;; (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -143,15 +143,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Native comp
-(when (and (fboundp 'native-comp-available-p)
-           (native-comp-available-p))
-  (progn
-    (setq native-comp-async-report-warnings-errors nil)
-    (setq comp-deferred-compilation t)
-    (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
-    (setq package-native-compile t)
-    ))
-(setq comp-speed 3)
+;; (when (and (fboundp 'native-comp-available-p)
+;;            (native-comp-available-p))
+;;   (progn
+;;     (setq native-comp-async-report-warnings-errors nil)
+;;     (setq comp-deferred-compilation t)
+;;     (add-to-list 'native-comp-eln-load-path (expand-file-name "eln-cache/" user-emacs-directory))
+;;     (setq package-native-compile t)
+;;     ))
+;; (setq comp-speed 3)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; org-recur
@@ -263,6 +263,9 @@ _h_ decrease width    _l_ increase width
   :after org-mode)
 (map! :leader
       :desc "anki push" "n p" #'anki-editor-push-notes)
+
+(map! :leader
+      :desc "anki create" "n i" #'anki-editor-insert-note)
 
 ;; beacon
 (beacon-mode 1)

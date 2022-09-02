@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14)
         doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
+      doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 14))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -30,7 +30,7 @@
   '(font-lock-keyword-face :slant italic))
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-14"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 

@@ -259,5 +259,7 @@ _h_ decrease width    _l_ increase width
 (add-hook 'doc-view-mode-hook #'pdf-tools-install)
 
 ;; push anki notes
+ (use-package! anki-editor
+  :after org-mode)
 (map! :leader
       :desc "anki push" "n p" #'anki-editor-push-notes)

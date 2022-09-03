@@ -131,7 +131,7 @@
 ;; Drag-and-drop to `dired`
 (add-hook 'dired-mode-hook 'org-download-enable)
 
-(setq-default org-download-image-dir "/home/rahman/Documents/org/Pictures")
+(setq-default org-download-image-dir "~/Documents/org/Pictures")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; evil-escape

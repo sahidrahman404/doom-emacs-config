@@ -53,7 +53,7 @@
 
        :editor
        (evil
-          +everywhere
+        +everywhere
         ); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding

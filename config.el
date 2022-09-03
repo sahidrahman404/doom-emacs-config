@@ -21,16 +21,16 @@
 ;; font string. You generally only need these two:
 (set-face-attribute 'default nil
   :font "JetBrainsMono Nerd Font Mono"
-  :height 110
-  :weight 'medium)
+  :height 100
+  :weight 'light)
 (set-face-attribute 'variable-pitch nil
   :font "Ubuntu Nerd Font"
   :height 120
   :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
   :font "JetBrainsMono Nerd Font Mono"
-  :height 110
-  :weight 'medium)
+  :height 100
+  :weight 'light)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
 ;; Your font must have an italic face available.

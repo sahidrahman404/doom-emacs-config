@@ -60,6 +60,8 @@
 (package! beacon)
 (package! centered-cursor-mode)
 (package! apheleia)
+(package! multi-vterm)
+(package! peep-dired)
 
 ;; TSI
 (package! tsi

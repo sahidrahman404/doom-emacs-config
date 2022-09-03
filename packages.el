@@ -52,7 +52,6 @@
 (package! evil-tutor)
 (package! flycheck)
 (package! org-bullets)
-(package! prettier-js)
 (package! counsel-css)
 (package! openwith)
 (package! org-download)

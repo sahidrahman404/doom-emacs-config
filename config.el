@@ -102,20 +102,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; prettier
-;; (use-package prettier.js
-;;   :ensure t
-;;   :after(rjsx-mode)
-;;   :hook (rjsx-mode . prettier-js-mode))
-;; (add-hook 'tsx-mode-hook 'prettier-js-mode)
-;; (add-hook 'typescript-mode-hook 'prettier-js-mode)
-
-;; (setq prettier-js-args '(
-;;   "--single-quote" "true"
-;;   "--arrow-parens" "avoid"
-;;   "--semi" "true"
-;; ))
-
 ;; (defconst doom-frame-transparency 100)
 ;; (set-frame-parameter (selected-frame) 'alpha doom-frame-transparency)
 ;; (add-to-list 'default-frame-alist `(alpha . ,doom-frame-transparency))
@@ -138,7 +124,6 @@
 (openwith-mode t)
 (setq openwith-associations '(("\\.mp4\\'" "mpv" (file))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;; org-download
 (require 'org-download)

@@ -21,15 +21,15 @@
 ;; font string. You generally only need these two:
 (set-face-attribute 'default nil
                     :font "JetBrainsMono Nerd Font Mono"
-                    :height 100
+                    :height 120
                     :weight 'light)
 (set-face-attribute 'variable-pitch nil
                     :font "Ubuntu Nerd Font"
-                    :height 120
+                    :height 100
                     :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
                     :font "JetBrainsMono Nerd Font Mono"
-                    :height 100
+                    :height 120
                     :weight 'light)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
@@ -43,7 +43,7 @@
 (setq-default line-spacing 0.12)
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-14"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-12"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 
@@ -51,7 +51,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'modus-vivendi)
-;; (setq doom-themes-treemacs-theme "doom-colors")
+(setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

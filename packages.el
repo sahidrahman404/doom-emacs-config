@@ -83,3 +83,8 @@
 ;; topsy
 (package! topsy
   :recipe (:host github :repo "alphapapa/topsy.el"))
+
+
+;; jest interactive mode
+(package! jest-interactive-mode
+  :recipe (:host github :repo "i-have-no-name/jest-interactive-mode"))

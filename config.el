@@ -328,3 +328,5 @@ _h_ decrease width    _l_ increase width
 (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
 
 (setq peep-dired-ignored-extensions '("mkv" "iso" "mp4"))
+
+(use-package! jest-interactive-mode)

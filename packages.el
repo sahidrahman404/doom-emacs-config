@@ -62,6 +62,7 @@
 (package! apheleia)
 (package! multi-vterm)
 (package! peep-dired)
+(package! all-the-icons-dired)
 
 ;; TSI
 (package! tsi

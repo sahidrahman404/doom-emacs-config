@@ -371,3 +371,6 @@ _h_ decrease width    _l_ increase width
                               ("png" . "sxiv")
                               ("mkv" . "mpv")
                               ("mp4" . "mpv")))
+;;Making deleted files go to trash can
+(setq delete-by-moving-to-trash t
+      trash-directory "~/.local/share/Trash/files/")

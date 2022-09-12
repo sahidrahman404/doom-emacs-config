@@ -53,7 +53,7 @@
 (package! flycheck)
 (package! org-bullets)
 (package! counsel-css)
-(package! openwith)
+(package! dired-open)
 (package! org-download)
 (package! org-recur)
 (package! nov)

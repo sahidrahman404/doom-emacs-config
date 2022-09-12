@@ -119,12 +119,6 @@
 (add-hook 'css-mode-hook #'counsel-css-imenu-setup)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; open-with
-(require 'openwith)
-(openwith-mode t)
-(setq openwith-associations '(("\\.mp4\\'" "mpv" (file))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; org-download
 (require 'org-download)
 
@@ -330,3 +324,10 @@ _h_ decrease width    _l_ increase width
 (setq peep-dired-ignored-extensions '("mkv" "iso" "mp4"))
 
 (use-package! jest-interactive-mode)
+;; With dired-open plugin, you can launch external programs for certain extensions
+;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
+(setq dired-open-extensions '(("gif" . "sxiv")
+                              ("jpg" . "sxiv")
+                              ("png" . "sxiv")
+                              ("mkv" . "mpv")
+                              ("mp4" . "mpv")))

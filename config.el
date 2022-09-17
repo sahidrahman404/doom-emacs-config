@@ -252,7 +252,7 @@ _h_ decrease width    _l_ increase width
 
 ;; push anki notes
 (use-package! anki-editor
-  :after org-mode)
+  :after org)
 (map! :leader
       :desc "anki push" "n p" #'anki-editor-push-notes)
 
@@ -275,8 +275,8 @@ _h_ decrease width    _l_ increase width
 (apheleia-global-mode t)
 
 ;; centered
-(use-package centered-cursor-mode)
-(global-centered-cursor-mode t)
+;; (use-package centered-cursor-mode)
+;; (global-centered-cursor-mode t)
 
 ;; multi vterm
 (use-package multi-vterm

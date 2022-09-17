@@ -20,17 +20,17 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (set-face-attribute 'default nil
-                    :font "JetBrainsMono Nerd Font Mono"
+                    :font "FiraCode Nerd Font Mono"
                     :height 120
-                    :weight 'light)
+                    :weight 'medium)
 (set-face-attribute 'variable-pitch nil
                     :font "Ubuntu Nerd Font"
                     :height 100
                     :weight 'medium)
 (set-face-attribute 'fixed-pitch nil
-                    :font "JetBrainsMono Nerd Font Mono"
+                    :font "FiraCode Nerd Font Mono"
                     :height 120
-                    :weight 'light)
+                    :weight 'medium)
 ;; Makes commented text and keywords italics.
 ;; This is working in emacsclient but not emacs.
 ;; Your font must have an italic face available.
@@ -43,7 +43,7 @@
 (setq-default line-spacing 0.12)
 
 ;; Needed if using emacsclient. Otherwise, your fonts will be smaller than expected.
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-12"))
+(add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font Mono-12"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
 

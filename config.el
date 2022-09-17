@@ -57,6 +57,8 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/org/")
 (setq org-roam-directory "~/Documents/org/roam/")
+(use-package org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (after! org
   (map! :map org-mode-map
         :n "M-J" #'org-metadown

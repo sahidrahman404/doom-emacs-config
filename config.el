@@ -59,6 +59,7 @@
 (setq org-roam-directory "~/Documents/org/roam/")
 (use-package org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-fold-core-style "overlays")
 (after! org
   (map! :map org-mode-map
         :n "M-J" #'org-metadown

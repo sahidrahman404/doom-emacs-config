@@ -89,3 +89,7 @@
 ;; jest interactive mode
 (package! jest-interactive-mode
   :recipe (:host github :repo "i-have-no-name/jest-interactive-mode"))
+
+;; ob-ts-node
+(package! ob-ts-node
+  :recipe (:host github :repo "tmythicator/ob-ts-node"))

@@ -377,3 +377,7 @@ _h_ decrease width    _l_ increase width
 (setq delete-by-moving-to-trash t
       trash-directory "~/.local/share/Trash/files/")
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ts-node . t)
+   ))

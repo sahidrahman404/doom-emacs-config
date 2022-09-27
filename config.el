@@ -381,3 +381,5 @@ _h_ decrease width    _l_ increase width
  'org-babel-load-languages
  '((ts-node . t)
    ))
+
+(map! :i [remap newline] nil)

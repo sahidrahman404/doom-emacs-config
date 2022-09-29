@@ -383,3 +383,5 @@ _h_ decrease width    _l_ increase width
    ))
 
 (map! :i [remap newline] nil)
+
+(setq org-fold-core-style 'overlays)

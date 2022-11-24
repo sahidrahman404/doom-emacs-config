@@ -63,6 +63,9 @@
 (package! multi-vterm)
 (package! peep-dired)
 (package! all-the-icons-dired)
+(package! coverlay)
+(package! origami)
+(package! evil-textobj-tree-sitter)
 
 ;; TSI
 (package! tsi

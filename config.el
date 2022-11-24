@@ -385,3 +385,9 @@ _h_ decrease width    _l_ increase width
 (map! :i [remap newline] nil)
 
 (setq org-fold-core-style 'overlays)
+
+;; evil-textobj-tree-sitter
+;; bind `function.outer`(entire function block) to `f` for use in things like `vaf`, `yaf`
+(define-key evil-outer-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.outer"))
+;; bind `function.inner`(function block without name and args) to `f` for use in things like `vif`, `yif`
+(define-key evil-inner-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.inner"))

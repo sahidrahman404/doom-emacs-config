@@ -66,6 +66,8 @@
 (package! coverlay)
 (package! origami)
 (package! evil-textobj-tree-sitter)
+(package! anki-connect)
+(package! auto-rename-tag)
 
 ;; TSI
 (package! tsi

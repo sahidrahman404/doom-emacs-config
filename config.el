@@ -86,7 +86,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
 (evilem-default-keybindings "SPC")
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -227,6 +227,10 @@ _h_ decrease width    _l_ increase width
         :config
         (setq auto-mode-alist (delete '("\\.tsx\\'" . typescript-tsx-mode) auto-mode-alist))
         (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-mode)))
+
+(add-hook 'tsx-mode-hook #'auto-rename-tag-mode)
+(add-hook 'tsx-mode-hook #'emmet-mode)
+(add-hook 'tsx-mode-hook #'centered-cursor-mode)
 
 ;; GTD
 (setq org-agenda-files '("~/Documents/org/gtd/inbox.org"

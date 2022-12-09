@@ -398,3 +398,17 @@ _h_ decrease width    _l_ increase width
 (use-package lsp-tailwindcss
   :init
   (setq lsp-tailwindcss-major-modes '(rjsx-mode web-mode html-mode css-mode typescript-mode tsx-mode)))
+
+;; ts workaround
+(use-package lsp-mode
+  :defer t
+  :config
+  (advice-add 'json-parse-string :around
+              (lambda (orig string &rest rest)
+                (apply orig (s-replace "\\u0000" "" string)
+                       rest)))
+  (advice-add 'json-parse-buffer :around
+              (lambda (orig &rest rest)
+                (while (re-search-forward "\\u0000" nil t)
+                  (replace-match ""))
+                (apply orig rest))))

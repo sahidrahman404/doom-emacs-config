@@ -98,3 +98,6 @@
 ;; ob-ts-node
 (package! ob-ts-node
   :recipe (:host github :repo "tmythicator/ob-ts-node"))
+
+;; tailwind
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))

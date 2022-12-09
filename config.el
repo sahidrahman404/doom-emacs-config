@@ -393,3 +393,8 @@ _h_ decrease width    _l_ increase width
 (define-key evil-outer-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.outer"))
 ;; bind `function.inner`(function block without name and args) to `f` for use in things like `vif`, `yif`
 (define-key evil-inner-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.inner"))
+
+;; tailwind
+(use-package lsp-tailwindcss
+  :init
+  (setq lsp-tailwindcss-major-modes '(rjsx-mode web-mode html-mode css-mode typescript-mode tsx-mode)))

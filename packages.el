@@ -68,6 +68,7 @@
 (package! evil-textobj-tree-sitter)
 (package! anki-connect)
 (package! auto-rename-tag)
+(package! harpoon)
 
 ;; TSI
 (package! tsi

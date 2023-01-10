@@ -26,7 +26,7 @@
 (set-face-attribute 'variable-pitch nil
                     :font "Ubuntu Nerd Font"
                     :height 100
-                    :weight 'medium)
+                    :weight 'light)
 (set-face-attribute 'fixed-pitch nil
                     :font "FiraCode Nerd Font Mono"
                     :height 120
@@ -46,11 +46,12 @@
 (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font Mono-12"))
 ;; changes certain keywords to symbols, such as lamda!
 (setq global-prettify-symbols-mode t)
+(setq   org-hide-emphasis-markers  t)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'doom-one-light)
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -237,7 +238,9 @@ _h_ decrease width    _l_ increase width
                          "~/Documents/org/gtd/gtd.org"
                          "~/Documents/org/gtd/tickler.org"
                          "~/Documents/org/Tasks.org"
-                         "~/Documents/org/Habits.org"))
+                         "~/Documents/org/Habits.org"
+                         "~/Documents/org/roam/20221227235810-project.org"))
+
 
 (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                (file+headline "~/Documents/org/gtd/inbox.org" "Tasks")
@@ -419,8 +422,8 @@ _h_ decrease width    _l_ increase width
 (map! :n "C-s" 'harpoon-add-file)
 
 ;; And the vanilla commands
-(map! :leader "j c" 'harpoon-clear)
-(map! :leader "j f" 'harpoon-toggle-file)
+(map! :leader "z c" 'harpoon-clear)
+(map! :leader "z f" 'harpoon-toggle-file)
 (map! :leader "1" 'harpoon-go-to-1)
 (map! :leader "2" 'harpoon-go-to-2)
 (map! :leader "3" 'harpoon-go-to-3)
